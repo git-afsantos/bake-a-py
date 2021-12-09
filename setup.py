@@ -84,8 +84,8 @@ setup(
     extras_require   = {},
     # zip_safe         = False,
     project_urls     = {
-        'Bug Reports': 'https://github.com/git-afsantos/' + PROJECT + '/issues',
-        # 'Say Thanks!': 'http://saythanks.io/to/haros-framework',
         'Source': 'https://github.com/git-afsantos/' + PROJECT + '/',
+        'Tracker': 'https://github.com/git-afsantos/' + PROJECT + '/issues',
+        # 'Say Thanks!': 'http://saythanks.io/to/haros-framework',
     },
 )
