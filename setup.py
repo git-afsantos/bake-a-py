@@ -9,7 +9,11 @@
 
 from pathlib import Path
 from setuptools import setup, find_packages
-import regex
+
+try:
+    import regex as re
+except ImportError:
+    import re
 
 ###############################################################################
 # Constants
@@ -32,7 +36,7 @@ def read(filename):
 def read_version():
     filepath = HERE / 'src' / PYTHON_PKG / '__init__.py'
     init = filepath.read_text(encoding='utf-8')
-    version, = regex.findall(r"__version__ = '(.*)'", init)
+    version, = re.findall(r"__version__ = '(.*)'", init)
     return version
 
 ###############################################################################
