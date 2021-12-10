@@ -10,11 +10,6 @@
 from pathlib import Path
 from setuptools import setup, find_packages
 
-try:
-    import regex as re
-except ImportError:
-    import re
-
 ###############################################################################
 # Constants
 ###############################################################################
@@ -33,29 +28,21 @@ SRC = str(HERE / 'src')
 def read(filename):
     return (HERE / filename).read_text(encoding='utf-8')
 
-def read_version():
-    filepath = HERE / 'src' / PYTHON_PKG / '__init__.py'
-    init = filepath.read_text(encoding='utf-8')
-    version, = re.findall(r"__version__ = '(.*)'", init)
-    return version
-
 ###############################################################################
 # Setup
 ###############################################################################
 
-__version__ = read_version()
-
-requirements = [r for r in read(HERE / 'requirements.txt').splitlines() if r]
-
-long_description = (HERE / 'README.md').read_text(encoding='utf-8')
-
 setup(
     name             = PROJECT,
-    version          = __version__,
+    use_scm_version  = {
+        'version_scheme': 'no-guess-dev',
+        'local_scheme': 'dirty-tag',
+        'fallback_version': '0.1.0',
+    },
     description      = 'Variability analysis tool for ROS systems',
-    long_description = long_description,
+    long_description = read('README.md'),
     long_description_content_type = 'text/markdown',
-    url              = 'https://github.com/git-afsantos/' + PROJECT,
+    url              = f'https://github.com/git-afsantos/{PROJECT}',
     author           = u'André Santos',
     author_email     = 'haros.framework@gmail.com',
     license          = 'MIT',
@@ -70,8 +57,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
@@ -79,17 +64,16 @@ setup(
         'Topic :: Scientific/Engineering',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Software Development :: Quality Assurance'
     ],
     entry_points     = {'console_scripts': [f'{PROJECT}={PYTHON_PKG}:main']},
-    python_requires  = '>=3.6, <4',
-    install_requires = requirements,
-    extras_require   = {},
-    # zip_safe         = False,
+    python_requires  = '>=3.8, <4',
+    install_requires = [],
+    extras_require   = {'dev': ['pytest', 'tox']},
+    zip_safe         = False,
     project_urls     = {
-        'Source': 'https://github.com/git-afsantos/' + PROJECT + '/',
-        'Tracker': 'https://github.com/git-afsantos/' + PROJECT + '/issues',
+        'Source': f'https://github.com/git-afsantos/{PROJECT}/',
+        'Tracker': f'https://github.com/git-afsantos/{PROJECT}/issues',
         # 'Say Thanks!': 'http://saythanks.io/to/haros-framework',
     },
 )

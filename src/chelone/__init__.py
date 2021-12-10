@@ -3,7 +3,13 @@
 # SPDX-License-Identifier: MIT
 # Copyright © 2021 André Santos
 
-__version__ = '0.0.0'
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version('chelone')
+except PackageNotFoundError:
+    # package is not installed
+    __version__ = 'unknown'
 
 def main():
     print('Hello, world!')
