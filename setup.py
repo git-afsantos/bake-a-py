@@ -60,11 +60,11 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3 :: Only'
+        'Programming Language :: Python :: 3 :: Only',
         'Topic :: Scientific/Engineering',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Quality Assurance'
+        'Topic :: Software Development :: Quality Assurance',
     ],
     entry_points     = {'console_scripts': [f'{PROJECT}={PYTHON_PKG}:main']},
     python_requires  = '>=3.8, <4',
