@@ -8,5 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Refining package structure.
 
+### Fixed
+- Fixed an issue that prevented `pip install -e .` from working.
+
 ## [0.0.0](https://github.com/git-afsantos/chelone/releases/tag/v0.0.0) - 2021-12-09
 Repository creation.
