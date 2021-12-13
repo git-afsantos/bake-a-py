@@ -17,7 +17,6 @@ from setuptools import setup, find_packages
 PROJECT = 'chelone'
 PYTHON_PKG = 'chelone'
 HERE = Path(__file__).parent
-SRC = str(HERE / 'src')
 
 ###############################################################################
 # Utility
@@ -47,8 +46,8 @@ setup(
     author_email     = 'haros.framework@gmail.com',
     license          = 'MIT',
     keywords         = 'ros, variability, software product lines, feature models',
-    packages         = find_packages(where=SRC),
-    package_dir      = {'': SRC},
+    packages         = find_packages(where='src'),
+    package_dir      = {'': 'src'},
     package_data     = {}, # {PYTHON_PKG: ['dir/*.file']},
     classifiers      = [
         'Development Status :: 3 - Alpha',
