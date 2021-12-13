@@ -11,5 +11,6 @@ except PackageNotFoundError:
     # package is not installed
     __version__ = 'unknown'
 
-def main():
+def main() -> int:
     print('Hello, world!')
+    return 0
