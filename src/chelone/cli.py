@@ -89,8 +89,8 @@ def do_real_work(args: Dict[str, Any], configs: Dict[str, Any]) -> None:
 ###############################################################################
 
 
-def main(argv: List[str]) -> int:
-    args = parse_arguments(argv)
+def main(argv: List[str] | None = None) -> int:
+    args = parse_arguments(argv if argv is not None else [])
 
     try:
         # Load additional config files here, e.g., from a path given via args.
