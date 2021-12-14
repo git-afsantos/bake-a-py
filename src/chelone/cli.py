@@ -18,7 +18,7 @@ Some of the structure of this file came from this StackExchange question:
 # Imports
 ###############################################################################
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import argparse
 import sys
@@ -89,7 +89,7 @@ def do_real_work(args: Dict[str, Any], configs: Dict[str, Any]) -> None:
 ###############################################################################
 
 
-def main(argv: List[str] | None = None) -> int:
+def main(argv: Optional[List[str]] = None) -> int:
     args = parse_arguments(argv if argv is not None else [])
 
     try:
