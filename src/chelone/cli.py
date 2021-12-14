@@ -30,7 +30,7 @@ from chelone import __version__ as current_version
 ###############################################################################
 
 
-def parse_arguments(args: List[str]) -> Dict[str, Any]:
+def parse_arguments(args: Optional[List[str]]) -> Dict[str, Any]:
     msg = 'A short description of the project.'
     parser = argparse.ArgumentParser(description=msg)
 
@@ -90,7 +90,7 @@ def do_real_work(args: Dict[str, Any], configs: Dict[str, Any]) -> None:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    args = parse_arguments(argv if argv is not None else [])
+    args = parse_arguments(argv)
 
     try:
         # Load additional config files here, e.g., from a path given via args.
