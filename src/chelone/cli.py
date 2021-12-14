@@ -30,7 +30,7 @@ from chelone import __version__ as current_version
 ###############################################################################
 
 
-def parse_arguments(args: Optional[List[str]]) -> Dict[str, Any]:
+def parse_arguments(argv: Optional[List[str]]) -> Dict[str, Any]:
     msg = 'A short description of the project.'
     parser = argparse.ArgumentParser(description=msg)
 
@@ -42,9 +42,8 @@ def parse_arguments(args: Optional[List[str]]) -> Dict[str, Any]:
         'args', metavar='ARG', nargs=argparse.ZERO_OR_MORE, help='An argument for the program.'
     )
 
-    args = parser.parse_args(args=args)
-    args = vars(args)
-    return args
+    args = parser.parse_args(args=argv)
+    return vars(args)
 
 
 ###############################################################################
@@ -54,7 +53,7 @@ def parse_arguments(args: Optional[List[str]]) -> Dict[str, Any]:
 
 def load_configs(args: Dict[str, Any]) -> Dict[str, Any]:
     try:
-        config = {}
+        config: Dict[str, Any] = {}
         # with open(args['config_path'], 'r') as file_pointer:
         # yaml.safe_load(file_pointer)
 
@@ -68,7 +67,7 @@ def load_configs(args: Dict[str, Any]) -> Dict[str, Any]:
             raise err
 
         # Optional: return some sane fallback defaults.
-        sane_defaults = {}
+        sane_defaults: Dict[str, Any] = {}
         return sane_defaults
 
 
