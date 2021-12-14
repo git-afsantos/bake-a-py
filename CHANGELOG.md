@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Support for type checking with `mypy`.
 - Support for code style with `flake8`, `black` and `isort`.
+- Configuration for `pre-commit` hooks.
+- Example `main` entry point.
 
 ### Changed
 - Refining package structure.

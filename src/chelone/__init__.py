@@ -1,17 +1,18 @@
-# -*- coding: utf-8 -*-
-
 # SPDX-License-Identifier: MIT
 # Copyright © 2021 André Santos
 
-from importlib.metadata import PackageNotFoundError, version
+###############################################################################
+# Imports
+###############################################################################
+
+from importlib.metadata import PackageNotFoundError, version  # pragma: no cover
+
+###############################################################################
+# Constants
+###############################################################################
 
 try:
     __version__ = version('chelone')
-except PackageNotFoundError:
+except PackageNotFoundError:  # pragma: no cover
     # package is not installed
     __version__ = 'unknown'
-
-
-def main() -> int:
-    print('Hello, world!')
-    return 0
