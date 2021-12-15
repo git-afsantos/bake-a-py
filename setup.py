@@ -51,6 +51,7 @@ setup(
     keywords='ros, variability, software product lines, feature models',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
+    include_package_data=True,
     package_data={},  # {PYTHON_PKG: ['dir/*.file']},
     classifiers=[
         'Development Status :: 3 - Alpha',
