@@ -8,6 +8,8 @@ Since [ROS](https://www.ros.org/) often uses various turtles as mascots, it is f
 This package sets up various `tox` environments for purposes such as static checks, testing, building and publishing.
 It is also configured with `pre-commit` hooks to perform static checks and automatic formatting.
 
+If you do not use `tox`, you can build the package with `build` and install a development version with `pip`.
+
 Assume `cd` into the repository's root.
 
 To install the `pre-commit` hooks:
@@ -46,6 +48,12 @@ To build the package:
 tox -e build
 ```
 
+To build the package (with `build`):
+
+```bash
+python -m build
+```
+
 To clean the previous build files:
 
 ```bash
@@ -62,6 +70,12 @@ To publish the package to PyPI:
 
 ```bash
 tox -e publish -- --repository pypi
+```
+
+To install an editable version:
+
+```bash
+pip install -e .
 ```
 
 ## Package Structure
