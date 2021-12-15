@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # SPDX-License-Identifier: MIT
 # Copyright © 2021 André Santos
 
@@ -45,7 +43,7 @@ setup(
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     url=f'https://github.com/git-afsantos/{PROJECT}',
-    author=u'André Santos',
+    author='André Santos',
     author_email='haros.framework@gmail.com',
     license='MIT',
     keywords='ros, variability, software product lines, feature models',
