@@ -5,7 +5,7 @@
 # Imports
 ###############################################################################
 
-import chelone
+import bakeapy
 
 ###############################################################################
 # Tests
@@ -17,6 +17,6 @@ def test_import_was_ok():
 
 
 def test_pkg_has_version():
-    assert hasattr(chelone, '__version__')
-    assert isinstance(chelone.__version__, str)
-    assert chelone.__version__ != ''
+    assert hasattr(bakeapy, '__version__')
+    assert isinstance(bakeapy.__version__, str)
+    assert bakeapy.__version__ != ''

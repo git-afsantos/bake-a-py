@@ -23,7 +23,7 @@ from typing import Any, Dict, List, Optional
 import argparse
 import sys
 
-from chelone import __version__ as current_version
+from bakeapy import __version__ as current_version
 
 ###############################################################################
 # Argument Parsing

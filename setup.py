@@ -12,8 +12,8 @@ from setuptools import find_packages, setup
 # Constants
 ###############################################################################
 
-PROJECT = 'chelone'
-PYTHON_PKG = 'chelone'
+PROJECT = 'bake-a-py'
+PYTHON_PKG = 'bakeapy'
 HERE = Path(__file__).parent
 
 ###############################################################################
