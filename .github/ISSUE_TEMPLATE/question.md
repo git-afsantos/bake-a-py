@@ -1,6 +1,6 @@
 ---
-name: :question: Question
-about: Ask a question about this project :books:
+name: "❓ Question"
+about: "Ask a question about this project 📚"
 title: ''
 labels: question
 assignees:
