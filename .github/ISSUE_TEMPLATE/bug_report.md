@@ -1,9 +1,10 @@
 ---
-name: :bug: Bug report
-about: If something isn't working :wrench:
+name: "🐛 Bug report"
+about: "If something isn't working 🔧"
 title: ''
 labels: bug
-assignees:
+assignees: ''
+
 ---
 
 ## :bug: Bug Report
