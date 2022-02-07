@@ -20,7 +20,7 @@ jobs:
       with:
         fetch-depth: 0  # avoids shallow checkout as needed by setuptools-scm
     - name: Set up Python
-      uses: actions/setup-python@v2.3.1
+      uses: actions/setup-python@v2.3.2
       with:
         python-version: 3.8
     - name: Build Project and Publish
