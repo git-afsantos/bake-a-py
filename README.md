@@ -39,7 +39,6 @@ The `.github` directory comes with a number of files to configure certain GitHub
 - Keep package dependencies up to date with Dependabot. The configuration file can be found at `dependabot.yml`.
 - Keep Release Drafts automatically up to date with Pull Requests, using the [Release Drafter GitHub Action](https://github.com/marketplace/actions/release-drafter). The configuration file can be found at `release-drafter.yml` and the workflow at `workflows/release-drafter.yml`.
 - Automatic package building and publishing when pushing a new version tag to `main`. The workflow can be found at `workflows/publish-package.yml`.
-- Code quality and security analysis with CodeQL. The workflow can be found at `workflows/codeql-analysis.yml`.
 
 ## Tooling
 
