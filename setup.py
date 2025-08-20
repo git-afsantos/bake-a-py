@@ -5,6 +5,8 @@
 # Imports
 ###############################################################################
 
+from typing import Final
+
 from pathlib import Path
 from setuptools import find_packages, setup
 
@@ -12,16 +14,16 @@ from setuptools import find_packages, setup
 # Constants
 ###############################################################################
 
-PROJECT = 'bake-a-py'
-PYTHON_PKG = 'bakeapy'
-HERE = Path(__file__).parent
+PROJECT: Final[str] = 'bake-a-py'
+PYTHON_PKG: Final[str] = 'bakeapy'
+HERE: Final[Path] = Path(__file__).parent
 
 ###############################################################################
 # Utility
 ###############################################################################
 
 
-def read(filename):
+def read(filename: str | Path) -> str:
     # Utility function to read the README, etc..
     # Used for the long_description and other fields.
     return (HERE / filename).read_text(encoding='utf-8')
@@ -58,9 +60,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: 3 :: Only',
         'Topic :: Scientific/Engineering',
         'Topic :: Software Development',
@@ -70,7 +70,7 @@ setup(
     entry_points={
         'console_scripts': [f'{PROJECT}={PYTHON_PKG}.cli:main'],
     },
-    python_requires='>=3.8, <4',
+    python_requires='>=3.12, <4',
     install_requires=[],
     extras_require={
         'dev': ['pytest', 'tox'],
