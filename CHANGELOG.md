@@ -1,11 +1,23 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.0](https://github.com/git-afsantos/bake-a-py/releases/tag/v1.0.0) - 2025-08-20
+
+### Changed
+
+- Updated project to support Python 3.12 or higher.
+- Improved type hints.
+- Improved exception handling.
+- Improved CLI argument parser.
+
 ## [0.0.1](https://github.com/git-afsantos/bake-a-py/releases/tag/v0.0.1) - 2021-12-16
+
 ### Added
+
 - Support for type checking with `mypy`.
 - Support for code style with `flake8`, `black` and `isort`.
 - Configuration for `pre-commit` hooks.
@@ -13,10 +25,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - GitHub workflows.
 
 ### Changed
+
 - Refining package structure.
 
 ### Fixed
+
 - Fixed an issue that prevented `pip install -e .` from working.
 
 ## [0.0.0](https://github.com/git-afsantos/bake-a-py/releases/tag/v0.0.0) - 2021-12-09
+
 Repository creation.

@@ -18,24 +18,35 @@ Some of the structure of this file came from this StackExchange question:
 # Imports
 ###############################################################################
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Final
 
 import argparse
+from collections.abc import Mapping, Sequence
 import sys
 
 from bakeapy import __version__ as current_version
+
+###############################################################################
+# Constants
+###############################################################################
+
+PROG: Final[str] = 'bake-a-py'
 
 ###############################################################################
 # Argument Parsing
 ###############################################################################
 
 
-def parse_arguments(argv: Optional[List[str]]) -> Dict[str, Any]:
+def parse_arguments(argv: Sequence[str] | None) -> dict[str, Any]:
     msg = 'A short description of the project.'
-    parser = argparse.ArgumentParser(description=msg)
+    parser = argparse.ArgumentParser(prog=PROG, description=msg)
 
     parser.add_argument(
-        '--version', dest='version', action='store_true', help='Prints the program version.'
+        '--version',
+        dest='version',
+        action='version',
+        version=f'{PROG} {current_version}',
+        help='Prints the program version.',
     )
 
     parser.add_argument(
@@ -51,9 +62,9 @@ def parse_arguments(argv: Optional[List[str]]) -> Dict[str, Any]:
 ###############################################################################
 
 
-def load_configs(args: Dict[str, Any]) -> Dict[str, Any]:
+def load_configs(args: Mapping[str, Any]) -> dict[str, Any]:
     try:
-        config: Dict[str, Any] = {}
+        config: dict[str, Any] = {}
         # with open(args['config_path'], 'r') as file_pointer:
         # yaml.safe_load(file_pointer)
 
@@ -67,7 +78,7 @@ def load_configs(args: Dict[str, Any]) -> Dict[str, Any]:
             raise err
 
         # Optional: return some sane fallback defaults.
-        sane_defaults: Dict[str, Any] = {}
+        sane_defaults: dict[str, Any] = {}
         return sane_defaults
 
 
@@ -76,11 +87,9 @@ def load_configs(args: Dict[str, Any]) -> Dict[str, Any]:
 ###############################################################################
 
 
-def do_real_work(args: Dict[str, Any], configs: Dict[str, Any]) -> None:
+def do_real_work(args: Mapping[str, Any], configs: Mapping[str, Any]) -> None:
     print(f'Arguments: {args}')
     print(f'Configurations: {configs}')
-    if args['version']:
-        print(f'Version: {current_version}')
 
 
 ###############################################################################
@@ -88,7 +97,7 @@ def do_real_work(args: Dict[str, Any], configs: Dict[str, Any]) -> None:
 ###############################################################################
 
 
-def main(argv: Optional[List[str]] = None) -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     args = parse_arguments(argv)
 
     try:
@@ -105,7 +114,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         # In real code the `except` would probably be less broad.
         # Turn exceptions into appropriate logs and/or console output.
 
+        import traceback
+
         print('An unhandled exception crashed the application!', err)
+        traceback.print_exc()
 
         # Non-zero return code to signal error.
         # It can, of course, be more fine-grained than this general code.
